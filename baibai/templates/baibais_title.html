@@ -1,0 +1,28 @@
+{% load static %}
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <img class="mb-4"
+      src={% static "img1/mercari-logo-01-freelogovectors.net_.png" %}
+      alt="" width="72"
+      height="57">
+      <h1 class="fw-light">Baibai Site</h1>
+      <p class="lead text-muted">
+        出品されている商品を探して欲しいものを買おう！
+        いらなくなったものを売って欲しい人に届けよう！</p>
+      <p>
+        {% if user.is_authenticated %}
+        <a href="{% url 'baibai:post' %}"
+           class="btn btn-primary my-2">出品する</a>
+        <a href="{% url 'accounts:logout' %}"
+           class="btn btn-secondary my-2">ログアウト</a>
+        {% else %}
+        <a href="{% url 'accounts:signup' %}"
+           class="btn btn-primary my-2">サインアップ</a>
+        <a href="{% url 'accounts:login' %}"
+           class="btn btn-secondary my-2">ログイン</a>
+        {% endif %}
+      </p>
+    </div>
+  </div>
+</section>

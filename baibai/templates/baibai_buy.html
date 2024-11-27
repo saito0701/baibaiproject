@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Baibai Buy{% endblock %}
+
+{% block contents %}
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col offset-3">
+      <form method="POST">
+        <br>
+        <p>購入しますか？</p>
+        {% csrf_token %}
+      </form>
+      <a href="{% url 'baibai:baibai_done' %}">購入する</a>
+      <a href="{% url 'baibai:index' %}">ホームに戻る</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
